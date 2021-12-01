@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2021 metaquarx <metaquarx@protonmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+image: alpine
+
+stages:
+    - build
+
+before_script:
+    - apk update
+    - apk add make cmake clang binutils build-base git
+
+build:
+    stage: build
+    script:
+        - cmake -S . -B build
+        - cmake --build build
