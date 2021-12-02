@@ -24,20 +24,21 @@ static int Part1(const std::vector<int> &input) {
 }
 
 static int Part2(const std::vector<int> &input) {
-	int times_incremented = 0;
-	int last_distance = input[0] + input[1] + input[2];
+	auto count_window = [&input](unsigned index) { return input[index] + input[index + 1] + input[index + 2]; };
+	int counter = 0;
 
-	for (unsigned i = 3; i < input.size(); i++) {
-		int current_window_distance = input[i] + input[i - 1] + input[i - 2];
+	int last = count_window(0);
+	for (unsigned i = 1; i != input.size() - 2; i++) {
+		int current = count_window(i);
 
-		if (current_window_distance > last_distance) {
-			times_incremented++;
+		if (current > last) {
+			counter++;
 		}
 
-		last_distance = current_window_distance;
+		last = current;
 	}
 
-	return times_incremented;
+	return counter;
 }
 
 int main(int argc, char **argv) {
@@ -49,7 +50,7 @@ int main(int argc, char **argv) {
 		auto formatted = aoc::to_int(aoc::by_line(*input));
 
 		std::cout << "Part 1: " << Part1(formatted) << std::endl;
-		std::cout << "part 2: " << Part2(formatted) << std::endl;
+		std::cout << "Part 2: " << Part2(formatted) << std::endl;
 	} else {
 		return 1;
 	}
