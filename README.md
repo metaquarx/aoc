@@ -27,7 +27,7 @@ The executables expect the input to be provided inside the corresponding file in
 | Day |     2021    |
 |----:|:-----------:|
 |  01 |:star: :star:|
-|  02 |             |
+|  02 |:star: :star:|
 |  03 |             |
 |  04 |             |
 |  05 |             |
