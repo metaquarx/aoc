@@ -3,23 +3,24 @@
 
 #include "Helpers.hpp"
 
+#include <algorithm>
 #include <iostream>
 
 static int Part1(const std::vector<int> &input) {
-	int times_incremented = 0;
-	int last_distance = 0;
+	int counter = 0;
 
-	for (auto distance : input) {
-		if (last_distance != 0) {
-			if (distance > last_distance) {
-				times_incremented++;
-			}
+	int last = input[0];
+	for (unsigned i = 1; i != input.size(); i++) {
+		int current = input[i];
+
+		if (current > last) {
+			counter++;
 		}
 
-		last_distance = distance;
+		last = current;
 	}
 
-	return times_incremented;
+	return counter;
 }
 
 static int Part2(const std::vector<int> &input) {
