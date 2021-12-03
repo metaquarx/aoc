@@ -24,7 +24,7 @@ static char get_most_common(const std::vector<std::string> &read, unsigned index
 	}
 };
 
-static char get_least_common(const std::vector<std::string> &read, unsigned index, bool bias = '1') {
+static char get_least_common(const std::vector<std::string> &read, unsigned index, char bias = '1') {
 	if (get_most_common(read, index, bias) == '0') {
 		return '1';
 	} else {
@@ -50,47 +50,34 @@ static int Part1(const std::vector<std::string> &input) {
 }
 
 static int Part2(const std::vector<std::string> &input) {
-	std::vector<std::string> keep_most_common(input);
+	auto keep_most = [&input](char (*op)(const std::vector<std::string> &, unsigned, char bias), char bias) {
+		std::vector<std::string> out(input);
 
-	for (unsigned i = 0; i < input[0].size(); i++) {
-		auto most_common = get_most_common(keep_most_common, i, '1');
+		for (unsigned i = 0; i < input[0].size(); i++) {
+			auto side = op(out, i, bias);
 
-		for (auto it = keep_most_common.begin(); it < keep_most_common.end();) {
-			if ((*it)[i] != most_common) {
-				it = keep_most_common.erase(it);
+			for (auto it = out.begin(); it < out.end();) {
+				if ((*it)[i] != side) {
+					it = out.erase(it);
+				} else {
+					it++;
+				}
+			}
+
+			if (out.size() > 1) {
+				continue;
 			} else {
-				it++;
+				break;
 			}
 		}
 
-		if (keep_most_common.size() > 1) {
-			continue;
-		} else {
-			break;
-		}
-	}
+		return out.front();
+	};
 
-	std::vector<std::string> keep_least_common(input);
+	auto most_common = keep_most(get_most_common, '1');
+	auto least_common = keep_most(get_least_common, '1');
 
-	for (unsigned i = 0; i < input[0].size(); i++) {
-		auto least_common = get_least_common(keep_least_common, i);
-
-		for (auto it = keep_least_common.begin(); it < keep_least_common.end();) {
-			if ((*it)[i] != least_common) {
-				it = keep_least_common.erase(it);
-			} else {
-				it++;
-			}
-		}
-
-		if (keep_least_common.size() > 1) {
-			continue;
-		} else {
-			break;
-		}
-	}
-
-	return std::stoi(keep_most_common.front(), nullptr, 2) * std::stoi(keep_least_common.front(), nullptr, 2);
+	return std::stoi(most_common, nullptr, 2) * std::stoi(least_common, nullptr, 2);
 }
 
 int main(int argc, char **argv) {
