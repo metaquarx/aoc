@@ -6,30 +6,41 @@
 #include <iostream>
 #include <sstream>
 
-static int Part1(const std::vector<std::string> &input) {
-	std::vector<int> sum_columns;
-	unsigned width = static_cast<unsigned>(input[0].size());
-	int height = static_cast<int>(input.size());
-	sum_columns.resize(width, 0);
+static char get_most_common(const std::vector<std::string> &read, unsigned index, char bias) {
+	int ones = 0;
 
-	for (auto line : input) {
-		for (unsigned i = 0; i < line.size(); i++) {
-			if (line[i] == '1') {
-				sum_columns[i]++;
-			}
+	for (auto line : read) {
+		if (line[index] == '1') {
+			ones++;
 		}
 	}
 
+	if (static_cast<int>(read.size()) - ones == ones) {
+		return bias;
+	} else if (static_cast<int>(read.size()) - ones < ones) {
+		return '1';
+	} else {
+		return '0';
+	}
+};
+
+static char get_least_common(const std::vector<std::string> &read, unsigned index, bool bias = '1') {
+	if (get_most_common(read, index, bias) == '0') {
+		return '1';
+	} else {
+		return '0';
+	}
+};
+
+static int Part1(const std::vector<std::string> &input) {
 	std::string most_common;
 	std::string least_common;
-	for (unsigned i = 0; i < sum_columns.size(); i++) {
-		if (height - sum_columns[i] > sum_columns[i]) {
-			most_common.push_back('0');
-			least_common.push_back('1');
-		} else {
-			most_common.push_back('1');
-			least_common.push_back('0');
-		}
+
+	auto width = input[0].size();
+
+	for (unsigned i = 0; i < width; i++) {
+		most_common.push_back(get_most_common(input, i, '0'));
+		least_common.push_back(get_least_common(input, i));
 	}
 
 	int gamma_rate = std::stoi(most_common, nullptr, 2);
@@ -39,32 +50,6 @@ static int Part1(const std::vector<std::string> &input) {
 }
 
 static int Part2(const std::vector<std::string> &input) {
-	auto get_most_common = [](const std::vector<std::string> &read, unsigned index, char bias) {
-		int ones = 0;
-
-		for (auto line : read) {
-			if (line[index] == '1') {
-				ones++;
-			}
-		}
-
-		if (static_cast<int>(read.size()) - ones == ones) {
-			return bias;
-		} else if (static_cast<int>(read.size()) - ones < ones) {
-			return '1';
-		} else {
-			return '0';
-		}
-	};
-
-	auto get_least_common = [&get_most_common](const std::vector<std::string> &read, unsigned index) {
-		if (get_most_common(read, index, '1') == '0') {
-			return '1';
-		} else {
-			return '0';
-		}
-	};
-
 	std::vector<std::string> keep_most_common(input);
 
 	for (unsigned i = 0; i < input[0].size(); i++) {
@@ -107,7 +92,6 @@ static int Part2(const std::vector<std::string> &input) {
 
 	return std::stoi(keep_most_common.front(), nullptr, 2) * std::stoi(keep_least_common.front(), nullptr, 2);
 }
-
 
 int main(int argc, char **argv) {
 	std::vector<std::string> test_input = {
