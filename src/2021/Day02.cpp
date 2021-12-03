@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
 		auto formatted = aoc::by_line(*input);
 
 		std::cout << "Part 1: " << Part1(formatted) << std::endl;
-		std::cout << "part 2: " << Part2(formatted) << std::endl;
+		std::cout << "Part 2: " << Part2(formatted) << std::endl;
 	} else {
 		return 1;
 	}
