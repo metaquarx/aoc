@@ -16,7 +16,7 @@ cmake -S . -B build
 cmake --build build -t 2021
 ```
 
-The executables expect the input to be provided inside the corresponding file in `inputs/year/DayXX.txt`. Alternatively, you can provide the input file as an argument.
+The executables expects the input to be provided inside the corresponding file in `inputs/year/DayXX.txt`. Alternatively, you can provide the input file as an argument.
 
 ```
 ./build/2021/Day01 input.txt
