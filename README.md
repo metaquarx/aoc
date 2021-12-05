@@ -28,9 +28,9 @@ The executables expect the input to be provided inside the corresponding file in
 |----:|:-----------:|
 |  01 |:star: :star:|
 |  02 |:star: :star:|
-|  03 |             |
-|  04 |             |
-|  05 |             |
+|  03 |:star: :star:|
+|  04 |:star: :star:|
+|  05 |:star: :star:|
 |  06 |             |
 |  07 |             |
 |  08 |             |
