@@ -15,7 +15,7 @@ std::optional<std::string> get_input(const std::string &filename, int argc, char
 
 std::optional<std::string> read_file(const std::string &filename);
 
-std::vector<std::string> by_line(const std::string &input);
+std::vector<std::string> by_line(const std::string &input, char separator = '\n');
 
 std::vector<int> to_int(const std::vector<std::string> &input);
 

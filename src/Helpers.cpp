@@ -19,7 +19,8 @@ std::optional<std::string> get_input(const std::string &filename, int argc, char
 	if (argc > 1) {
 		auto file = read_file(argv[1]);
 		if (!file) {
-			std::cout << "Could not read file specified in arguments, falling back to " << filename << std::endl;
+			std::cout << "Could not read file specified in arguments, falling back to " << filename
+					  << std::endl;
 		} else {
 			return file;
 		}
@@ -39,7 +40,8 @@ std::optional<std::string> read_file(const std::string &filename) {
 	std::string output;
 
 	file.seekg(0, std::ios::end);
-	// When directories are passed as a filename, this seeks to 2^63-1. Im not sure how else to avoid this
+	// When directories are passed as a filename, this seeks to 2^63-1. Im not sure how else to
+	// avoid this
 	if (file.tellg() > 99999) {
 		std::cout << "Invalid file " << filename << std::endl;
 		return std::nullopt;
@@ -56,12 +58,12 @@ std::optional<std::string> read_file(const std::string &filename) {
 	return output;
 }
 
-std::vector<std::string> by_line(const std::string &input) {
+std::vector<std::string> by_line(const std::string &input, char separator) {
 	std::vector<std::string> output;
 	std::stringstream ss(input);
 
 	std::string line;
-	while (std::getline(ss, line, '\n')) {
+	while (std::getline(ss, line, separator)) {
 		output.push_back(line);
 	}
 
