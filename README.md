@@ -32,7 +32,7 @@ The executables expects the input to be provided inside the corresponding file i
 |  04 |:star: :star:|
 |  05 |:star: :star:|
 |  06 |:star: :star:|
-|  07 |             |
+|  07 |:star: :star:|
 |  08 |             |
 |  09 |             |
 |  10 |             |
