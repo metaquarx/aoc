@@ -12,7 +12,9 @@ static auto Part1(std::string templ, const std::unordered_map<std::string, std::
 	for (unsigned step = 0; step < 10; step++) {
 		for (unsigned i = 0; i < templ.size() - 1; i++) {
 			std::string sequence = std::string() + templ[i] + templ[i + 1];
-			templ.insert(i + 1, std::string() + input.at(sequence));
+			if (input.find(sequence) != input.end()) {
+				templ.insert(i + 1, std::string() + input.at(sequence));
+			}
 			i += 1;
 		}
 	}
@@ -47,8 +49,12 @@ static auto Part2(std::string templ, const std::unordered_map<std::string, std::
 
 		for (const auto &[pair, count] : pairs) {
 			auto sequence = std::string() + pair.first + pair.second;
-			new_pairs[std::pair{pair.first, input.at(sequence)[0]}] += count;
-			new_pairs[std::pair{input.at(sequence)[0], pair.second}] += count;
+			if (input.find(sequence) != input.end()) {
+				new_pairs[std::pair{pair.first, input.at(sequence)[0]}] += count;
+				new_pairs[std::pair{input.at(sequence)[0], pair.second}] += count;
+			} else {
+				new_pairs[std::pair{pair.first, pair.second}] += count;
+			}
 		}
 
 		std::swap(pairs, new_pairs);
