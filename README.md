@@ -40,7 +40,7 @@ The executables expects the input to be provided inside the corresponding file i
 |  12 |:star: :star:|
 |  13 |:star: :star:|
 |  14 |:star: :star:|
-|  15 |             |
+|  15 |:star: :star:|
 |  16 |             |
 |  17 |             |
 |  18 |             |

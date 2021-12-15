@@ -16,6 +16,7 @@ set(FILES
 	"Day12"
 	"Day13"
 	"Day14"
+	"Day15"
 )
 
 RegisterFiles("${FILES}" "2021")
