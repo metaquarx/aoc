@@ -49,5 +49,6 @@ The executables expects the input to be provided inside the corresponding file i
 |  21 |:star: :star:|
 |  22 |:star: :star:|
 |  23 |             |
+|  23 |:star: :star:|
 |  24 |             |
 |  25 |             |
