@@ -26,29 +26,30 @@ The executables expects the input to be provided inside the corresponding file i
 
 | Day |     2021    |
 |----:|:-----------:|
-|  01 |:star: :star:|
-|  02 |:star: :star:|
-|  03 |:star: :star:|
-|  04 |:star: :star:|
-|  05 |:star: :star:|
-|  06 |:star: :star:|
-|  07 |:star: :star:|
-|  08 |:star: :star:|
-|  09 |:star: :star:|
-|  10 |:star: :star:|
-|  11 |:star: :star:|
-|  12 |:star: :star:|
-|  13 |:star: :star:|
-|  14 |:star: :star:|
-|  15 |:star: :star:|
-|  16 |:star: :star:|
-|  17 |:star: :star:|
-|  18 |:star: :star:|
-|  19 |:star: :star:|
-|  20 |:star: :star:|
-|  21 |:star: :star:|
-|  22 |:star: :star:|
-|  23 |             |
+|  01 |:ocean: :ocean:|
+|  02 |:ocean: :ocean:|
+|  03 |:ocean: :ocean:|
+|  04 |:ocean: :ocean:|
+|  05 |:ocean: :ocean:|
+|  06 |:ocean: :ocean:|
+|  07 |:ocean: :ocean:|
+|  08 |:ocean: :ocean:|
+|  09 |:ocean: :ocean:|
+|  10 |:ocean: :ocean:|
+|  11 |:ocean: :ocean:|
+|  12 |:ocean: :ocean:|
+|  13 |:ocean: :ocean:|
+|  14 |:ocean: :ocean:|
+|  15 |:ocean: :ocean:|
+|  16 |:ocean: :ocean:|
+|  17 |:ocean: :ocean:|
+|  18 |:ocean: :ocean:|
+|  19 |:ocean: :ocean:|
+|  20 |:ocean: :ocean:|
+|  21 |:ocean: :ocean:|
+|  22 |:ocean: :ocean:|
 |  23 |:star: :star:|
 |  24 |             |
 |  25 |             |
+
+Legend: :star: means completed after the fact, otherwise, it should be assumed they were completed on time.
