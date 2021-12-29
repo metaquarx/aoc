@@ -24,8 +24,8 @@ The executables expects the input to be provided inside the corresponding file i
 
 ## Coverage
 
-| Day |     2021    |
-|----:|:-----------:|
+| Day |      2021     |
+|----:|:-------------:|
 |  01 |:ocean: :ocean:|
 |  02 |:ocean: :ocean:|
 |  03 |:ocean: :ocean:|
@@ -48,8 +48,8 @@ The executables expects the input to be provided inside the corresponding file i
 |  20 |:ocean: :ocean:|
 |  21 |:ocean: :ocean:|
 |  22 |:ocean: :ocean:|
-|  23 |:star: :star:|
-|  24 |:star: :star:|
-|  25 |             |
+|  23 | :star: :star: |
+|  24 | :star: :star: |
+|  25 | :star: :star: |
 
 Legend: :star: means completed after the fact, otherwise, it should be assumed they were completed on time.
