@@ -49,7 +49,7 @@ The executables expects the input to be provided inside the corresponding file i
 |  21 |:ocean: :ocean:|
 |  22 |:ocean: :ocean:|
 |  23 |:star: :star:|
-|  24 |             |
+|  24 |:star: :star:|
 |  25 |             |
 
 Legend: :star: means completed after the fact, otherwise, it should be assumed they were completed on time.
