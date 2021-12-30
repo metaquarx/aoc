@@ -3,6 +3,7 @@
 
 #include "Helpers.hpp"
 
+#include <algorithm>
 #include <functional>
 #include <iostream>
 

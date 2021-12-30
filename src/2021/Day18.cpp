@@ -3,10 +3,8 @@
 
 #include "Helpers.hpp"
 
-#include <algorithm>
-#include <cmath>
+#include <cctype>
 #include <iostream>
-#include <vector>
 
 static auto parse(const std::string &s) {
 	std::vector<std::string> out;

@@ -3,13 +3,8 @@
 
 #include "Helpers.hpp"
 
-#include <execution>
-#include <functional>
+#include <algorithm>
 #include <iostream>
-#include <unordered_map>
-#include <unordered_set>
-#include <utility>
-#include <vector>
 
 enum class Tile { Empty, East, South };
 

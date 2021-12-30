@@ -3,13 +3,14 @@
 
 #include "Helpers.hpp"
 
-#include <cstdio>
+#include <algorithm>
 #include <iostream>
 #include <unordered_map>
 
 class Vector {
 public:
-	Vector(unsigned x_ = 0, unsigned y_ = 0) : x(x_), y(y_) {}
+	Vector(unsigned x_ = 0, unsigned y_ = 0) : x(x_), y(y_) {
+	}
 	bool operator==(const Vector &other) const {
 		return (x == other.x) && (y == other.y);
 	}
@@ -19,7 +20,8 @@ public:
 
 class Line {
 public:
-	Line(Vector start_ = {}, Vector end_ = {}) : start(start_), end(end_) {}
+	Line(Vector start_ = {}, Vector end_ = {}) : start(start_), end(end_) {
+	}
 	Line(const std::string &input) {
 		std::sscanf(input.c_str(), "%u,%u -> %u,%u", &start.x, &start.y, &end.x, &end.y);
 	}
@@ -50,8 +52,10 @@ static unsigned Part1(const std::vector<std::string> &input) {
 	std::vector<Vector> points;
 	for (auto line : lines) {
 		if (line.start.x == line.end.x || line.start.y == line.end.y) {
-			for (unsigned x = std::min(line.start.x, line.end.x); x <= std::max(line.start.x, line.end.x); x++) {
-				for (unsigned y = std::min(line.start.y, line.end.y); y <= std::max(line.start.y, line.end.y); y++) {
+			for (unsigned x = std::min(line.start.x, line.end.x);
+				 x <= std::max(line.start.x, line.end.x); x++) {
+				for (unsigned y = std::min(line.start.y, line.end.y);
+					 y <= std::max(line.start.y, line.end.y); y++) {
 					points.emplace_back(x, y);
 				}
 			}
@@ -84,8 +88,10 @@ static unsigned Part2(const std::vector<std::string> &input) {
 	std::vector<Vector> points;
 	for (auto line : lines) {
 		if (line.start.x == line.end.x || line.start.y == line.end.y) {
-			for (unsigned x = std::min(line.start.x, line.end.x); x <= std::max(line.start.x, line.end.x); x++) {
-				for (unsigned y = std::min(line.start.y, line.end.y); y <= std::max(line.start.y, line.end.y); y++) {
+			for (unsigned x = std::min(line.start.x, line.end.x);
+				 x <= std::max(line.start.x, line.end.x); x++) {
+				for (unsigned y = std::min(line.start.y, line.end.y);
+					 y <= std::max(line.start.y, line.end.y); y++) {
 					points.emplace_back(x, y);
 				}
 			}
@@ -141,5 +147,6 @@ int main(int argc, char **argv) {
 	}
 }
 
-std::vector<std::string> test_input = {"0,9 -> 5,9", "8,0 -> 0,8", "9,4 -> 3,4", "2,2 -> 2,1", "7,0 -> 7,4",
-  "6,4 -> 2,0", "0,9 -> 2,9", "3,4 -> 1,4", "0,0 -> 8,8", "5,5 -> 8,2"};
+std::vector<std::string> test_input = {"0,9 -> 5,9", "8,0 -> 0,8", "9,4 -> 3,4", "2,2 -> 2,1",
+									   "7,0 -> 7,4", "6,4 -> 2,0", "0,9 -> 2,9", "3,4 -> 1,4",
+									   "0,0 -> 8,8", "5,5 -> 8,2"};

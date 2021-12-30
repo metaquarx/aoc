@@ -4,7 +4,6 @@
 #include "Helpers.hpp"
 
 #include <iostream>
-#include <sstream>
 
 static char get_most_common(const std::vector<std::string> &read, unsigned index, char bias) {
 	int ones = 0;
@@ -81,8 +80,8 @@ static int Part2(const std::vector<std::string> &input) {
 }
 
 int main(int argc, char **argv) {
-	std::vector<std::string> test_input = {
-	  "00100", "11110", "10110", "10111", "10101", "01111", "00111", "11100", "10000", "11001", "00010", "01010"};
+	std::vector<std::string> test_input = {"00100", "11110", "10110", "10111", "10101", "01111",
+										   "00111", "11100", "10000", "11001", "00010", "01010"};
 	aoc::test(Part1(test_input) == 198, "Part 1 test input");
 	aoc::test(Part2(test_input) == 230, "Part 2 test input");
 

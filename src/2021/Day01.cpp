@@ -3,7 +3,6 @@
 
 #include "Helpers.hpp"
 
-#include <algorithm>
 #include <iostream>
 
 static int Part1(const std::vector<int> &input) {
@@ -24,7 +23,9 @@ static int Part1(const std::vector<int> &input) {
 }
 
 static int Part2(const std::vector<int> &input) {
-	auto count_window = [&input](unsigned index) { return input[index] + input[index + 1] + input[index + 2]; };
+	auto count_window = [&input](unsigned index) {
+		return input[index] + input[index + 1] + input[index + 2];
+	};
 	int counter = 0;
 
 	int last = count_window(0);

@@ -46,7 +46,8 @@ static int Part2(const std::vector<std::string> &input) {
 }
 
 int main(int argc, char **argv) {
-	std::vector<std::string> test_input = {"forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2"};
+	std::vector<std::string> test_input = {"forward 5", "down 5", "forward 8",
+										   "up 3",		"down 8", "forward 2"};
 	aoc::test(Part1(test_input) == 150, "Part 1 test input");
 	aoc::test(Part2(test_input) == 900, "Part 2 test input");
 

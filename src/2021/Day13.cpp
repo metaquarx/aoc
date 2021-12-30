@@ -3,9 +3,11 @@
 
 #include "Helpers.hpp"
 
+#include <algorithm>
 #include <array>
 #include <cmath>
 #include <iostream>
+#include <limits>
 #include <set>
 
 static auto fold(const std::set<std::pair<int, int>> &points, char axis, int fold) {

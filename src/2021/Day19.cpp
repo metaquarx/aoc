@@ -3,11 +3,10 @@
 
 #include "Helpers.hpp"
 
-#include <cmath>
+#include <algorithm>
 #include <iostream>
 #include <unordered_map>
 #include <unordered_set>
-#include <vector>
 
 namespace std {
 template <>

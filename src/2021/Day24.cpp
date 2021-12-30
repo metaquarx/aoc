@@ -3,13 +3,11 @@
 
 #include "Helpers.hpp"
 
-#include <execution>
-#include <functional>
+#include <algorithm>
+#include <array>
 #include <iostream>
 #include <unordered_map>
 #include <unordered_set>
-#include <utility>
-#include <vector>
 
 struct Vals {
 	long a;

@@ -3,11 +3,10 @@
 
 #include "Helpers.hpp"
 
-#include <functional>
+#include <algorithm>
+#include <cstdio>
 #include <iostream>
 #include <unordered_map>
-#include <utility>
-#include <vector>
 
 struct instruction {
 	std::pair<int, int> x;

@@ -5,8 +5,6 @@
 
 #include <iostream>
 #include <unordered_map>
-#include <utility>
-#include <vector>
 
 struct Map {
 	std::unordered_map<std::pair<int, int>, bool> grid;

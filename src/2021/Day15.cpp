@@ -3,6 +3,7 @@
 
 #include "Helpers.hpp"
 
+#include <array>
 #include <iostream>
 #include <map>
 #include <unordered_map>

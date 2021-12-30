@@ -3,13 +3,12 @@
 
 #include "Helpers.hpp"
 
-#include <functional>
+#include <algorithm>
+#include <cstdlib>
 #include <iostream>
 #include <limits>
 #include <queue>
 #include <unordered_map>
-#include <utility>
-#include <vector>
 
 struct Point {
 	char lhs;

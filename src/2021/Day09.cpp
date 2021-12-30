@@ -5,7 +5,6 @@
 
 #include <algorithm>
 #include <iostream>
-#include <string>
 
 static unsigned Part1(const std::vector<std::vector<unsigned>> &input) {
 	unsigned lowpoints_total = 0;

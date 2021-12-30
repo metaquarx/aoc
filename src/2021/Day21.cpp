@@ -3,11 +3,11 @@
 
 #include "Helpers.hpp"
 
+#include <algorithm>
+#include <cstddef>
 #include <functional>
 #include <iostream>
 #include <unordered_map>
-#include <utility>
-#include <vector>
 
 static auto parse(const std::vector<std::string> &lines) {
 	return std::pair{static_cast<unsigned>(std::stoi(std::string() + lines[0].back())),
